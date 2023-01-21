@@ -42,7 +42,7 @@ const Header = ({}: Props) => {
         {" "}
         <motion.div
           initial={{
-            x: 500,
+            x: 499,
             opacity: 0,
           }}
           animate={{
