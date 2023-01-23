@@ -38,37 +38,32 @@ const Header = ({}: Props) => {
           bgColor="transparent"
         />
       </motion.div>
-      <Link href="#contact">
-        {" "}
-        <div>
-          {" "}
-          <motion.div
-            initial={{
-              x: 500,
-              opacity: 0,
-            }}
-            animate={{
-              x: 0,
-              opacity: 1,
-            }}
-            transition={{
-              duration: 1.5,
-            }}
-          >
-            <SocialIcon
-              className="cursor-pointer"
-              url="https://github.com/"
-              fgColor="#F1FAEE"
-              network="email"
-              bgColor="transparent"
-            />
-            <p className="uppercase hidden md:inline-flex text-sm">
-              {" "}
-              Get in touch
-            </p>
-          </motion.div>
-        </div>
-      </Link>
+
+      <motion.div
+        initial={{
+          x: 500,
+          opacity: 0,
+        }}
+        animate={{
+          x: 0,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 1.5,
+        }}
+      >
+        <SocialIcon
+          className="cursor-pointer"
+          url="https://github.com/"
+          fgColor="#F1FAEE"
+          network="email"
+          bgColor="transparent"
+        />
+
+        <p className="uppercase hidden md:inline-flex text-sm">
+          <Link href="#contact">Get in touch </Link>
+        </p>
+      </motion.div>
     </header>
   );
 };
