@@ -1,17 +1,30 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Image from "next/image";
 import Head from "next/head";
 import Header from "../components/header/Header";
 import Hero from "../components/hero/Hero";
-
 import gradient from "../public/bg-grdaient.png";
 import About from "../components/about/About";
-import Experience from "../components/experience/Experience";
+import ExperienceComponent from "../components/experience/ExperienceComponent";
 import Skills from "../components/skills/Skills";
 import Projects from "../components/projects/Projects";
 import ContactMe from "../components/contact/ContactMe";
+import { Experience, Skill, Social, Project, HomeInfo } from "../typings";
+import { fetchHomeInfo } from "../utils/fetchHomeInfo";
+import { fetchExperiences } from "../utils/fetchExperiences";
+import { fetchSocials } from "../utils/fetchSocials";
+import { fetchProjects } from "../utils/fetchProjects";
+import { fetchSkills } from "../utils/fetchSKills";
 
-const Home: NextPage = () => {
+type Props = {
+  homeInfo: HomeInfo;
+  experiences: Experience[];
+  skills: Skill[];
+  socials: Social[];
+  projects: Project[];
+};
+
+const Home = ({ homeInfo, experiences, skills, socials, projects }: Props) => {
   return (
     <div className="bg-white scrollbar-thin scrollbar-track-neutral-100/20 scrollbar-thumb-fuchsia-500 bg-gradient-to-b from-[#a7afbd] via-[#a3a7ab] to-[#ebdfc6] h-screen text-[#F1FAEE] snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0">
       <Head>
@@ -31,7 +44,7 @@ const Home: NextPage = () => {
       </section>
 
       <section id="experience" className="snap-center">
-        <Experience />
+        <ExperienceComponent />
       </section>
 
       <section id="skills" className="snap-start">
@@ -50,3 +63,26 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const homeInfo: HomeInfo = await fetchHomeInfo();
+  const experiences: Experience[] = await fetchExperiences();
+  const socials: Social[] = await fetchSocials();
+  const projects: Project[] = await fetchProjects();
+  const skills: Skill[] = await fetchSkills();
+
+  return {
+    props: {
+      homeInfo,
+      experiences,
+      skills,
+      socials,
+      projects,
+    },
+
+    //Next.js will attempt to re-generate the page:
+    //- when a request comes in
+    //- at most once evrry 10sec
+    revalidate: 10,
+  };
+};

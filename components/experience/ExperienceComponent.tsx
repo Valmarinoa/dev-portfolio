@@ -3,7 +3,7 @@ import ExperienceCard from "./experienceCard/ExperienceCard";
 
 type Props = {};
 
-const Experience = (props: Props) => {
+const ExperienceComponent = (props: Props) => {
   return (
     <div className="h-screen flex relative overflow-hidden flex-col md-flex-row max-w-full px-10 justify-evenly mx-auto items-center text-left">
       <h3 className="absolute top-24 uppercase tracking-[20px] text-[#F1FAEE] text-2xl">
@@ -19,4 +19,4 @@ const Experience = (props: Props) => {
   );
 };
 
-export default Experience;
+export default ExperienceComponent;
