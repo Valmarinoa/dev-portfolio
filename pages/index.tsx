@@ -14,7 +14,7 @@ import { fetchHomeInfo } from "../utils/fetchHomeInfo";
 import { fetchExperiences } from "../utils/fetchExperiences";
 import { fetchSocials } from "../utils/fetchSocials";
 import { fetchProjects } from "../utils/fetchProjects";
-import { fetchSkills } from "../utils/fetchSKills";
+import { fetchSkills } from "../utils/fetchSkills";
 
 type Props = {
   homeInfo: HomeInfo;
