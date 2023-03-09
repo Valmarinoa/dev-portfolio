@@ -20,8 +20,11 @@ const Hero = ({}: HeroProps) => {
   });
 
   return (
-    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center z-10 overflow-hidden">
-      <BackgroundCircles />
+    <div className="h-screen flex flex-col items-center justify-center text-center z-10 overflow-hidden">
+      <div className="md:mt-32">
+        <BackgroundCircles />
+      </div>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -46,13 +49,13 @@ const Hero = ({}: HeroProps) => {
           }}
           className="opacity-20 uppercase mt-[5px] "
         >
-          <span className="animate-pulsingOne opacity-20 md:font-normal font-thin tracking-widest md:tracking-[8px]">
+          <span className="animate-pulsingOne opacity-20 text-xs md:text-md md:font-normal font-thin tracking-widest md:tracking-[8px]">
             Developer
           </span>
-          <span className="animate-pulsingTwo px-6 opacity-20 font-thin tracking-widest md:tracking-[8px] md:font-normal">
+          <span className="animate-pulsingTwo px-6 opacity-20 text-xs md:text-md font-thin tracking-widest md:tracking-[8px] md:font-normal">
             Designer
           </span>
-          <span className="animate-pulsingThree opacity-20 font-thin tracking-widest md:tracking-[8px] md:font-normal">
+          <span className="animate-pulsingThree opacity-20 font-thin text-xs md:text-md tracking-widest md:tracking-[8px] md:font-normal">
             Creator
           </span>
         </motion.h2>

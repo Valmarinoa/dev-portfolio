@@ -43,7 +43,7 @@ const Home = ({ homeInfo, experiences, skills, socials, projects }: Props) => {
         <About />
       </section>
 
-      <section id="experience" className="snap-center">
+      <section id="experiences" className="snap-center">
         <ExperienceComponent />
       </section>
 
@@ -82,7 +82,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
     //Next.js will attempt to re-generate the page:
     //- when a request comes in
-    //- at most once evrry 10sec
+    //- at most once every 10sec
     revalidate: 10,
   };
 };
