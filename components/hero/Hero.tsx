@@ -5,10 +5,12 @@ import Image from "next/image";
 import profilepic from "../../public/pp2.png";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { HomeInfo } from "../../typings";
+import { urlFor } from "../../sanity";
 
-type HeroProps = {};
+type HeroProps = { homeInfo: HomeInfo };
 
-const Hero = ({}: HeroProps) => {
+const Hero = ({ homeInfo }: HeroProps) => {
   const [name, count] = useTypewriter({
     words: ["Hey! I'm Valentina"],
     delaySpeed: 1000,
@@ -25,17 +27,15 @@ const Hero = ({}: HeroProps) => {
         <BackgroundCircles />
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="h-32 w-32 rounded-full overflow-hidden z-10 relative"
-      >
-        <Image
-          src={profilepic}
+      <div className="h-32 w-32 rounded-full overflow-hidden z-10 relative">
+        <motion.img
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          src={urlFor(homeInfo?.profilePic).url()}
           alt="your dev"
           className="relative object-cover"
         />
-      </motion.div>
+      </div>
       <div className="z-20 flex flex-col justify-center items-center px-6 ">
         <motion.h2
           initial={{ opacity: 0 }}
@@ -72,7 +72,7 @@ const Hero = ({}: HeroProps) => {
           }}
           className="text-[#F1FAEE] text-4xl md:text-5xl font-semibold mt-2 z-10"
         >
-          Hey! I'm Valentina
+          Hey! I'm {homeInfo.name}
         </motion.h1>
 
         <div className="mt-12 whitespace-nowrap px-12 flex gap-8 md:gap-16">
