@@ -33,22 +33,22 @@ const Home = ({ homeInfo, experiences, skills, socials, projects }: Props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header socials={socials} />
 
       <section id="hero" className="snap-start">
-        <Hero />
+        <Hero homeInfo={homeInfo} />
       </section>
 
       <section id="about" className="snap-center">
-        <About />
+        <About aboutInfo={homeInfo} />
       </section>
 
       <section id="experiences" className="snap-center">
-        <ExperienceComponent />
+        <ExperienceComponent experiences={experiences} />
       </section>
 
       <section id="skills" className="snap-start">
-        <Skills />
+        <Skills skills={skills} />
       </section>
 
       <section id="projects" className="snap-start">
