@@ -21,6 +21,16 @@ export default defineType({
     defineField({
       name: "company",
       title: 'Company',
+      type: 'string'
+    }),
+    defineField({
+      name: "nature",
+      title: 'Nature',
+      type: 'string'
+    }),
+    defineField({
+      name: "role",
+      title: 'Role',
       type: 'text'
     }),
     defineField({

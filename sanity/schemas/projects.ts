@@ -13,7 +13,15 @@ export default defineType({
     }),
     defineField({
       name: "image",
-      title: 'Image',
+      title: 'Image DSK',
+      type: 'image',
+      options: {
+        hotspot: true
+      }
+    }),
+    defineField({
+      name: "imageMob",
+      title: 'Image MOB',
       type: 'image',
       options: {
         hotspot: true
