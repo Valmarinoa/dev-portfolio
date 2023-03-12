@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import React from "react";
-import Skill from "./skill/Skill";
+import { urlFor } from "../../sanity";
+import { Skill } from "../../typings";
+import EachSkill from "./skill/EachSkill";
 
-type Props = {};
+type Props = { skills: Skill[] };
 
-const Skills = (props: Props) => {
+const Skills = ({ skills }: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -19,14 +21,9 @@ const Skills = (props: Props) => {
         Hover over a skill for current proficiency
       </h3>
       <div className="grid grid-cols-4 gap-5">
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
+        {skills?.map((eachSkill) => {
+          return <EachSkill key={eachSkill._id} eachSkill={eachSkill} />;
+        })}
       </div>
     </motion.div>
   );

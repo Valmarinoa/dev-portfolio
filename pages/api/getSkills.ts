@@ -4,8 +4,7 @@ import { sanityClient } from "../../sanity";
 import { Skill } from "../../typings";
 
 const query = groq`
-*[_type == "skills"]
-`
+*[_type == "skills"]`
 
 type Data = {
     skills: Skill[]

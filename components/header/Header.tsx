@@ -25,14 +25,12 @@ const Header = ({ socials }: Props) => {
       >
         {socials.map((social) => {
           return (
-            <>
-              <SocialIcon
-                key={social._id}
-                url={social.url}
-                fgColor="#F1FAEE"
-                bgColor="transparent"
-              />
-            </>
+            <SocialIcon
+              key={social._id}
+              url={social.url}
+              fgColor="#F1FAEE"
+              bgColor="transparent"
+            />
           );
         })}
       </motion.div>

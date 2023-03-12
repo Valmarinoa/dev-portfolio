@@ -6,14 +6,13 @@ import { Experience } from "../../typings";
 const query = groq`
 *[_type == "experience"]{
     ...,
-    technologies[]->
+    skills[]->
   }
 `
 
 type Data = {
     experiences: Experience[]
 }
-
 
 export default async function handler(
     req: NextApiRequest,
