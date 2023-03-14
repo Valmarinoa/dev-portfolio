@@ -33,8 +33,7 @@ export interface Social extends SanityBody {
 
 export interface Skill extends SanityBody {
     _type: "skill";
-    logoTech: Image;
-    technology: Image;
+    skillImage: Image;
     progess: number;
     title: string;
 }
@@ -45,12 +44,11 @@ export interface Experience extends SanityBody {
     companyImage: Image;
     dateStarted: date;
     nature: string;
-    role: string;
     dateEnded: date;
     isCurrentlyWorkingHere: boolean;
     jobTitle: string;
     points: string[];
-    technologies: Skill[]
+    technologies: Technology[]
 }
 
 export interface Technology extends SanityBody {
