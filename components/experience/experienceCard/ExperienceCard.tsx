@@ -20,21 +20,13 @@ const ExperienceCard = ({ experience }: Props) => {
             <h4 className="text-2xl font-light">{experience.jobTitle}</h4>
             <p className="font-bold text-2xl mt-1">{experience.company}</p>
             <p className=" text-sm mt-1">{experience.nature}</p>
-
-            {/* <div className="flex space-x-2 my-2">
-              <Image
-                src={""}
-                alt="ReactJS"
-                className="h-10 w-10 rounded-full object-contain"
-              />
-            </div> */}
             <p className="uppercase py-5 text-xs">
               {new Date(experience.dateStarted).toDateString()} -{" "}
               {experience.isCurrentlyWorkingHere
                 ? "Present"
                 : new Date(experience.dateEnded).toDateString()}
             </p>
-            <p className="text-xs md:text-sm">{experience.role}</p>
+            <p className="text-xs md:text-sm">{""}</p>
           </div>
         </div>
       </article>

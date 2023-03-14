@@ -19,14 +19,13 @@ const ContactMe = (props: Props) => {
   });
 
   return (
-    <div className="h-screen flex justify-evenly px-10 max-w-7xl mx-auto relative text-center md:text-left md:flex-row items-center ">
+    <div className="h-screen flex justify-evenly px-10 pt-20 max-w-7xl mx-auto relative text-center md:text-left md:flex-row items-center ">
       <h3 className="absolute top-24 uppercase text-[#F1FAEE] tracking-[20px] text-2xl text-center">
         Contact Me
       </h3>
-      <div className="flex flex-col space-y-10">
+      <div className="flex flex-col space-y-4">
         <h4 className="text-4xl font-semibold text-center">
-          I have everything you need.
-          <div className="decortaion-white/50 underline">Let's talk.</div>
+          <div className="decortaion-white/50 underline">Let's talk!</div>
         </h4>
         <div className="space-y-2">
           <div className="flex items-center justify-center space-x-5">
@@ -39,12 +38,12 @@ const ContactMe = (props: Props) => {
           </div>
           <div className="flex items-center justify-center space-x-5">
             <MapPinIcon className=" h-7 w-7 animate-pulse " />
-            <p>5 Urca, Rio de Janeiro, BR</p>
+            <p>Amsterdam, NL</p>
           </div>
 
           <form
             onSubmit={onSubmit}
-            className="flex flex-col space-y-2 w-fit mx-auto pt-12"
+            className="flex flex-col space-y-2 w-fit mx-auto pt-4"
           >
             <div className="flex space-x-2">
               <input
