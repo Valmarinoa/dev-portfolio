@@ -20,13 +20,13 @@ const ContactMe = (props: Props) => {
 
   return (
     <div className="h-screen flex justify-evenly px-10 pt-20 max-w-7xl mx-auto relative text-center md:text-left md:flex-row items-center ">
-      <h3 className="absolute top-24 uppercase text-[#F1FAEE] tracking-[20px] text-2xl text-center">
-        Contact Me
+      <h3 className="absolute top-24 uppercase text-[#F1FAEE] tracking-[10px] md:tracking-[20px] text-2xl text-center">
+        Let's talk!
       </h3>
       <div className="flex flex-col space-y-4">
-        <h4 className="text-4xl font-semibold text-center">
+        {/* <h4 className="text-4xl font-semibold text-center">
           <div className="decortaion-white/50 underline">Let's talk!</div>
-        </h4>
+        </h4> */}
         <div className="space-y-2">
           <div className="flex items-center justify-center space-x-5">
             <PhoneIcon className=" h-7 w-7 animate-pulse " />

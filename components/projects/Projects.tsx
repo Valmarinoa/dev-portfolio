@@ -36,7 +36,7 @@ const Projects = ({ projects }: Props) => {
                   transition={{ duration: 0.8, delay: i * 0.1 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="w-full mx-auto object-contain max-w-[550px]"
+                  className="w-full mx-auto object-contain max-w-[550px] rounded-xl"
                   src={urlFor(project.image).url()}
                   alt={project.title}
                 />
