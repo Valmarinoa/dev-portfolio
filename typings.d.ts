@@ -45,17 +45,11 @@ export interface Experience extends SanityBody {
     dateStarted: date;
     nature: string;
     dateEnded: date;
+    role: string;
     isCurrentlyWorkingHere: boolean;
     jobTitle: string;
     points: string[];
     technologies: Technology[]
-}
-
-export interface Technology extends SanityBody {
-    _type: "technology";
-    image: Image;
-    progess: number;
-    title: string;
 }
 
 export interface Project extends SanityBody {
@@ -66,3 +60,11 @@ export interface Project extends SanityBody {
     summary: string;
     technologies: Technology[]
 }
+
+export interface Technology extends SanityBody {
+    _type: "technology";
+    image: Image;
+    progess: number;
+    title: string;
+}
+
