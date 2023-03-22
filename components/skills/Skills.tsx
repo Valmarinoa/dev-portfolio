@@ -12,18 +12,47 @@ const Skills = ({ skills }: Props) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="h-screen flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] min-h-screen justify-center xl:space-y-0 mx-auto items-center"
+      className="h-screen flex w-[90%] relative flex-col text-center md:text-left xl:flex-row max-w-[1000px] min-h-screen justify-center xl:space-y-0 mx-auto items-center"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-2xl">
+      <h3 className="absolute top-20 uppercase tracking-[10px] md:tracking-[20px] text-2xl">
         Skills
       </h3>
-      <h3 className="absolute top-36 uppercase tracking-[3px] text-sm">
+      {/* <h3 className="absolute top-28 uppercase tracking-[3px] text-sm">
         Hover over a skill for current proficiency
-      </h3>
-      <div className="grid grid-cols-4 gap-5">
-        {skills?.map((eachSkill) => {
-          return <EachSkill key={eachSkill._id} eachSkill={eachSkill} />;
+      </h3> */}
+      <div className="grid grid-cols-4 gap-4 md:gap-5">
+        {skills?.map((eachSkill, i) => {
+          return (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+            >
+              <EachSkill key={i} eachSkill={eachSkill} />
+            </motion.div>
+          );
         })}
+        {/* 
+        {skills?.slice(0, skills.length / 2).map((eachSkill, i) => {
+          return (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+            >
+              <EachSkill key={eachSkill._id} eachSkill={eachSkill} />
+            </motion.div>
+          );
+        })}
+        {skills?.slice(skills.length / 2, skills.length).map((eachSkill) => {
+          return (
+            <EachSkill
+              key={eachSkill._id}
+              eachSkill={eachSkill}
+              directionLeft
+            />
+          );
+        })} */}
       </div>
     </motion.div>
   );
