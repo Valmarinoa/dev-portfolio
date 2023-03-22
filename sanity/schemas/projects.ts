@@ -28,19 +28,19 @@ export default defineType({
       }
     }),
     defineField({
-      name: "sumary",
-      title: 'Sumary',
+      name: "summary",
+      title: 'Summary',
       type: 'text'
     }),
     defineField({
-      name: "technologies",
+      name: 'technologies',
       title: 'Technologies',
       type: 'array',
       of: [{ type: "reference", to: { type: 'skills' } }]
     }),
 
     defineField({
-      name: "linkToBuild",
+      name: 'linkToBuild',
       title: 'LinkToBuild',
       type: 'url'
     }),
