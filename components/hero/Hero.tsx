@@ -36,7 +36,7 @@ const Hero = ({ homeInfo }: HeroProps) => {
           className="relative object-cover"
         />
       </div>
-      <div className="z-20 flex flex-col justify-center items-center px-6 ">
+      <div className="z-20 flex flex-col justify-center items-center px-6 w-full">
         <motion.h2
           initial={{ opacity: 0 }}
           animate={{
@@ -72,7 +72,7 @@ const Hero = ({ homeInfo }: HeroProps) => {
           }}
           className="text-[#F1FAEE] text-4xl md:text-5xl font-semibold mt-2 z-10"
         >
-          Hey! I'm {homeInfo.name}
+          {homeInfo.name}
         </motion.h1>
 
         <div className="mt-12 whitespace-nowrap px-12 flex gap-8 md:gap-16">
