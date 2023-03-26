@@ -21,7 +21,7 @@ const ContactMe = (props: Props) => {
   return (
     <div className="h-screen flex justify-evenly px-10 pt-20 max-w-7xl mx-auto relative text-center md:text-left md:flex-row items-center ">
       <h3 className="absolute top-24 uppercase text-[#F1FAEE] tracking-[10px] md:tracking-[20px] text-2xl text-center">
-        Let's talk!
+        Lets talk!
       </h3>
       <div className="flex flex-col space-y-4">
         {/* <h4 className="text-4xl font-semibold text-center">

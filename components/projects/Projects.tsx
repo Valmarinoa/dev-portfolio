@@ -59,7 +59,10 @@ const Projects = ({ projects }: Props) => {
                 <div className="flex items-center gap-2 h-fit flex-wrap justify-center">
                   {project.technologies.map((tech, i) => {
                     return (
-                      <p className="text-xs border text-center rounded-full px-2 py-[2px] hover:bg-white/20 transition-all">
+                      <p
+                        key={tech.title}
+                        className="text-xs border text-center rounded-full px-2 py-[2px] hover:bg-white/20 transition-all"
+                      >
                         {tech.title}
                       </p>
                     );
