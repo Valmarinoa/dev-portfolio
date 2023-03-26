@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import Link from "next/link";
 import React from "react";
 import { urlFor } from "../../sanity";
 import { Project } from "../../typings";
+import Image from "next/legacy/image";
+import urlBuilder from "@sanity/image-url/lib/types/builder";
 
 type Props = { projects: Project[] };
 
@@ -16,12 +17,12 @@ const Projects = ({ projects }: Props) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="h-screen relative flex overflow-hidden  flex-col md:flex-row text-left max-w-full justify-evenly mx-auto items-center z-0"
+      className="h-screen relative flex overflow-hidden flex-col md:flex-row text-left max-w-full justify-evenly mx-auto items-center z-0"
     >
       <h3 className="absolute top-24 uppercase text-[#F1FAEE] tracking-[10px] md:tracking-[20px] text-2xl text-center">
         Projects
       </h3>
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20">
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20  scrollbar-thin">
         {projects?.map((project, i) => {
           return (
             <div
@@ -50,12 +51,20 @@ const Projects = ({ projects }: Props) => {
                     </a>
                   </span>
                 </h3>
-                <p className="text-xs text-center">{project.summary}</p>
-              </div>
-              <div className="flex items-center">
-                {/* {project.technologies.map((tech, i) => {
-                  return <img src={urlFor(tech.image).url()} alt="" key={i} />;
-                })} */}
+
+                <p className="text-xs opacity-50">{project.note}</p>
+                <p className="text-xs text-center px-2">{project.summary}</p>
+
+                {/* <div className="h-[1px] w-20 bg-white mx-auto"></div> */}
+                <div className="flex items-center gap-2 h-fit flex-wrap justify-center">
+                  {project.technologies.map((tech, i) => {
+                    return (
+                      <p className="text-xs border text-center rounded-full px-2 py-[2px] hover:bg-white/20 transition-all">
+                        {tech.title}
+                      </p>
+                    );
+                  })}
+                </div>
               </div>
               {/* <p className="sticky md:hidden bottom-0 bg-green-600">
                 {i + 1} of {projects.length}

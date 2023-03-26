@@ -29,23 +29,23 @@ const ContactMe = (props: Props) => {
         </h4> */}
         <div className="space-y-2">
           <div className="flex items-center justify-center space-x-5">
-            <PhoneIcon className=" h-7 w-7 animate-pulse " />
+            <PhoneIcon className=" h-4 w-4 animate-pulse " />
             <p>+31648664605</p>
           </div>
           <div className="flex items-center justify-center space-x-5">
-            <EnvelopeIcon className=" h-7 w-7 animate-pulse " />
+            <EnvelopeIcon className=" h-4 w-4 animate-pulse " />
             <p>valenmarinocol@gmail.com</p>
           </div>
           <div className="flex items-center justify-center space-x-5">
-            <MapPinIcon className=" h-7 w-7 animate-pulse " />
+            <MapPinIcon className=" h-4 w-4 animate-pulse " />
             <p>Amsterdam, NL</p>
           </div>
 
           <form
             onSubmit={onSubmit}
-            className="flex flex-col space-y-2 w-fit mx-auto pt-4"
+            className="flex flex-col space-y-2 md:mx-auto pt-4 w-80 md:w-[420px] mx-0"
           >
-            <div className="flex space-x-2">
+            <div className="flex flex-col space-y-2">
               <input
                 placeholder="Name"
                 {...register("name")}
@@ -62,15 +62,17 @@ const ContactMe = (props: Props) => {
             <input
               {...register("subject")}
               placeholder="Subject"
-              className="contact-input"
+              className="contact-input w-full"
               type="text"
             />
             <textarea
               placeholder="Message"
               {...register("message")}
-              className="contact-input"
+              className="contact-input md:h-48 h-32"
             />
-            <button>Submit</button>
+            <button className="border-[1px] w-fit mx-auto px-8 py-3 rounded-sm shadow-white shadow-sm hover:shadow-lg transition-all hover:shadow-white">
+              Submit
+            </button>
           </form>
         </div>
       </div>

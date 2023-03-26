@@ -19,13 +19,14 @@ const ExperienceComponent = ({ experiences }: Props) => {
           return <ExperienceCard experience={single} key={single._id} />;
         })}
       </div> */}
-      <div className="w-full flex flex-col mt-10 h-[70%] overflow-y-scroll">
+      <div className="w-full flex flex-col mt-16 h-[70%] overflow-y-scroll">
         {experiences.map((single, i) => {
           return (
             <motion.div
               initial={{ y: -30, opacity: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               whileInView={{ opacity: 1, y: 0 }}
+              key={single._id}
             >
               <ExperienceCard experience={single} key={single._id} />
             </motion.div>

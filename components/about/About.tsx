@@ -23,7 +23,6 @@ const About = ({ aboutInfo }: Props) => {
           <Image
             src={aboutpic}
             alt="About your developer<3"
-            objectFit="fill"
             className="rounded-full object-cover md:rounded-sm flex-shrink-0 max-w-[350px] w-full"
           />
         </motion.div>

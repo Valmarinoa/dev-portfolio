@@ -8,8 +8,6 @@ const ExperienceCard = ({ experience }: Props) => {
   const [open, setOpen] = useState(false);
   const toggleInfo = () => setOpen(!open);
 
-  console.log(open);
-
   return (
     <div
       className="w-full flex border-b border-spacing-1 py-6 text-left cursor-pointer"

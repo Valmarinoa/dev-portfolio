@@ -1,7 +1,7 @@
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "../backgroundcircles/BackgroundCircles";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import profilepic from "../../public/pp2.png";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -27,15 +27,25 @@ const Hero = ({ homeInfo }: HeroProps) => {
         <BackgroundCircles />
       </div>
 
-      <div className="h-32 w-32 rounded-full overflow-hidden z-10 relative">
-        <motion.img
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="h-32 w-32 rounded-full overflow-hidden z-10 relative"
+      >
+        {/* <motion.img
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           src={urlFor(homeInfo?.profilePic).url()}
           alt="your dev"
           className="relative object-cover"
+        /> */}
+        <Image
+          src={urlFor(homeInfo?.profilePic).url()}
+          alt={""}
+          layout="fill"
+          priority
         />
-      </div>
+      </motion.div>
       <div className="z-20 flex flex-col justify-center items-center px-6 w-full">
         <motion.h2
           initial={{ opacity: 0 }}
