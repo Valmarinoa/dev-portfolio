@@ -11,7 +11,7 @@ const ExperienceComponent = ({ experiences }: Props) => {
   console.log(experiences);
   return (
     <div className="h-screen flex relative overflow-y-hidden overflow-x-visible flex-col md-flex-row max-w-full px-6 md:w-[70%] justify-evenly mx-auto items-center text-left">
-      <h3 className="absolute top-20 uppercase tracking-[10px] md:tracking-[20px] text-[#F1FAEE] text-2xl">
+      <h3 className="absolute top-24 uppercase tracking-[20px] text-2xl text-[#140e2c] ">
         Experience
       </h3>
       {/* <div className="w-full flex flex-col space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory">

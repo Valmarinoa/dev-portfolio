@@ -28,7 +28,6 @@ type Props = {
 
 const Home = ({ homeInfo, experiences, skills, socials, projects }: Props) => {
   return (
-    // <div className="bg-transparent scrollbar-thin scrollbar-track-neutral-100/20 scrollbar-thumb-neutral-100/50 h-screen text-[#121731] snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0">
     <div className="scrollbar-thin scrollbar-track-neutral-100/20 scrollbar-thumb-neutral-100/50 bg-indigo-300 h-screen text-[#140e2c] snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0">
       <motion.video
         initial={{ opacity: 0 }}
@@ -52,7 +51,6 @@ const Home = ({ homeInfo, experiences, skills, socials, projects }: Props) => {
           filter: "blur(10px)",
         }}
       />
-      {/* <video src={require("/aguaclara-compact.mp4")} /> */}
 
       <Head>
         <title>Vals Portfolio</title>

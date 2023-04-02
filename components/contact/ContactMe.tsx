@@ -20,7 +20,7 @@ const ContactMe = (props: Props) => {
 
   return (
     <div className="h-screen flex justify-evenly px-10 pt-20 max-w-7xl mx-auto relative text-center md:text-left md:flex-row items-center ">
-      <h3 className="absolute top-24 uppercase text-[#F1FAEE] tracking-[10px] md:tracking-[20px] text-2xl text-center">
+      <h3 className="absolute top-24 uppercase text-[#140e2c] tracking-[10px] md:tracking-[20px] text-2xl text-center">
         Lets talk!
       </h3>
       <div className="flex flex-col space-y-4">
@@ -70,7 +70,7 @@ const ContactMe = (props: Props) => {
               {...register("message")}
               className="contact-input md:h-48 h-32"
             />
-            <button className="border-[1px] w-fit mx-auto px-8 py-3 rounded-sm shadow-white shadow-sm hover:shadow-lg transition-all hover:shadow-white">
+            <button className="border-[1px] w-fit mx-auto px-8 py-3 rounded-sm shadow-indigo-200 shadow-sm hover:shadow-lg transition-all hover:shadow-indigo-400">
               Submit
             </button>
           </form>

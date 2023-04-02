@@ -88,16 +88,17 @@ const Hero = ({ homeInfo }: HeroProps) => {
           }}
           className="mt-12 whitespace-nowrap px-12 flex text-[#140e2c] gap-8 md:gap-16"
         >
-          <Link href="#experience">
-            <motion.button className="heroButton text-[#140e2c]">
-              Experience
-            </motion.button>
-          </Link>
-          <Link href="#about text-[#140e2c]">
+          <Link href="#about">
             <motion.button className="heroButton text-[#140e2c]">
               About
             </motion.button>
           </Link>
+          <Link href="#experiences">
+            <motion.button className="heroButton text-[#140e2c]">
+              Experience
+            </motion.button>
+          </Link>
+
           <Link href="#skills">
             <motion.button className="heroButton text-[#140e2c]">
               Skills

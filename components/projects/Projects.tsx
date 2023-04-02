@@ -19,7 +19,7 @@ const Projects = ({ projects }: Props) => {
       transition={{ duration: 1.5 }}
       className="h-screen relative flex overflow-hidden flex-col md:flex-row text-left max-w-full justify-evenly mx-auto items-center z-0"
     >
-      <h3 className="absolute top-24 uppercase text-[#F1FAEE] tracking-[10px] md:tracking-[20px] text-2xl text-center">
+      <h3 className="absolute top-24 uppercase text-[#140e2c] tracking-[10px] md:tracking-[20px] text-2xl text-center">
         Projects
       </h3>
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20  scrollbar-thin">
@@ -31,13 +31,13 @@ const Projects = ({ projects }: Props) => {
             >
               {/* {Image of Project} */}
 
-              <div className="space-y-2 max-w-6xl text-center items-center hover:scale-105 hover:radial-bg border-transparent rounded-md p-4 transition-all">
+              <div className="space-y-2 max-w-6xl text-center items-center hover:scale-105 grayscale hover:grayscale-0 border-transparent rounded-md p-4 transition-all">
                 <motion.img
                   initial={{ y: -60, opacity: 0 }}
                   transition={{ duration: 0.8, delay: i * 0.1 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="w-full mx-auto object-contain max-w-[550px] rounded-xl grayscale hover:grayscale-0"
+                  className="w-full mx-auto object-contain max-w-[550px] rounded-xl "
                   src={urlFor(project.image).url()}
                   alt={project.title}
                 />
