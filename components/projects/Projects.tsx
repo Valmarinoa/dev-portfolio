@@ -31,47 +31,54 @@ const Projects = ({ projects }: Props) => {
             >
               {/* {Image of Project} */}
 
-              <div className="space-y-2 max-w-6xl text-center items-center hover:scale-105 transition-all">
+              <div className="space-y-2 max-w-6xl text-center items-center hover:scale-105 hover:radial-bg border-transparent rounded-md p-4 transition-all">
                 <motion.img
-                  initial={{ y: -100, opacity: 0 }}
+                  initial={{ y: -60, opacity: 0 }}
                   transition={{ duration: 0.8, delay: i * 0.1 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="w-full mx-auto object-contain max-w-[550px] rounded-xl"
+                  className="w-full mx-auto object-contain max-w-[550px] rounded-xl grayscale hover:grayscale-0"
                   src={urlFor(project.image).url()}
                   alt={project.title}
                 />
 
-                <h3 className="text-center font-semibold">
-                  {/* Subtitle Project */}
+                <motion.div
+                  initial={{ y: 60, opacity: 0 }}
+                  transition={{ duration: 0.8, delay: i * 0.1 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-center font-semibold">
+                    {/* Subtitle Project */}
 
-                  <span className="underline decoration-white/50">
-                    <a href={project.linkToBuild}>
-                      <p className="text-xl">{project.title}</p>
-                    </a>
-                  </span>
-                </h3>
+                    <span className="underline decoration-white/50">
+                      <a href={project.linkToBuild}>
+                        <p className="text-xl">{project.title}</p>
+                      </a>
+                    </span>
+                  </h3>
 
-                <p className="text-xs opacity-50">{project.note}</p>
-                <p className="text-xs text-center px-2">{project.summary}</p>
+                  <p className="text-xs opacity-50">{project.note}</p>
+                  <p className="text-xs text-center px-2">{project.summary}</p>
 
-                {/* <div className="h-[1px] w-20 bg-white mx-auto"></div> */}
-                <div className="flex items-center gap-2 h-fit flex-wrap justify-center">
-                  {project.technologies.map((tech, i) => {
-                    return (
-                      <p
-                        key={tech.title}
-                        className="text-xs border text-center rounded-full px-2 py-[2px] hover:bg-white/20 transition-all"
-                      >
-                        {tech.title}
-                      </p>
-                    );
-                  })}
-                </div>
-              </div>
-              {/* <p className="sticky md:hidden bottom-0 bg-green-600">
+                  {/* <div className="h-[1px] w-20 bg-white mx-auto"></div> */}
+                  <div className="flex items-center gap-2 h-fit flex-wrap justify-center mt-3">
+                    {project.technologies.map((tech, i) => {
+                      return (
+                        <p
+                          key={tech.title}
+                          className="text-xs border text-center rounded-full px-2 py-[2px] hover:bg-white/20 transition-all"
+                        >
+                          {tech.title}
+                        </p>
+                      );
+                    })}
+                  </div>
+                </motion.div>
+                {/* <p className="sticky md:hidden bottom-0 bg-green-600">
                 {i + 1} of {projects.length}
               </p> */}
+              </div>
             </div>
           );
         })}
