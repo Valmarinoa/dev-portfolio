@@ -3,6 +3,7 @@ import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Social } from "../../typings";
+import { EnvelopeIcon } from "@heroicons/react/24/outline";
 
 type Props = { socials: Social[] };
 
@@ -28,7 +29,7 @@ const Header = ({ socials }: Props) => {
             <SocialIcon
               key={social._id}
               url={social.url}
-              fgColor="#F1FAEE"
+              fgColor="#140e2c"
               bgColor="transparent"
             />
           );
@@ -47,14 +48,19 @@ const Header = ({ socials }: Props) => {
         transition={{
           duration: 1.5,
         }}
+        className="flex items-center"
       >
-        <SocialIcon
+        <Link href="mailto:valenmarinocol@gmail.com">
+          <EnvelopeIcon className="h-7 w-7 mr-2" />
+        </Link>
+
+        {/* <SocialIcon
           className="cursor-pointer"
-          url="https://github.com/"
-          fgColor="#F1FAEE"
+          url="email/"
+          fgColor="#140e2c"
           network="email"
           bgColor="transparent"
-        />
+        /> */}
 
         <p className="uppercase hidden md:inline-flex text-sm">
           <Link href="#contact">Get in touch </Link>
@@ -65,3 +71,7 @@ const Header = ({ socials }: Props) => {
 };
 
 export default Header;
+function handleSubmit(arg0: () => void) {
+  throw new Error("Function not implemented.");
+}
+

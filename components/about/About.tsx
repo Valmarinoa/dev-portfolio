@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import aboutpic from "../../public/pp.png";
+import aboutpic from "../../public/bnw-profile.png";
 import { motion } from "framer-motion";
 import { HomeInfo } from "../../typings";
 
@@ -23,7 +23,7 @@ const About = ({ aboutInfo }: Props) => {
           <Image
             src={aboutpic}
             alt="About your developer<3"
-            className="rounded-full object-cover md:rounded-sm flex-shrink-0 max-w-[350px] w-full"
+            className="shadow-xl rounded-full object-cover md:rounded-sm flex-shrink-0 max-w-[350px] w-full"
           />
         </motion.div>
         <motion.div

@@ -23,7 +23,7 @@ const Skills = ({ skills }: Props) => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.2 }}
               key={eachSkill._id}
             >
               <EachSkill key={i} eachSkill={eachSkill} />

@@ -22,23 +22,14 @@ const Hero = ({ homeInfo }: HeroProps) => {
   });
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center text-center z-10 overflow-hidden">
-      <div className="md:mt-32">
-        <BackgroundCircles />
-      </div>
+    <div className="h-screen flex flex-col items-center justify-center text-center z-10 overflow-hidden text-[#140e2c]">
+      <div className="md:mt-10">{/* <BackgroundCircles /> */}</div>
 
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="h-32 w-32 rounded-full overflow-hidden z-10 relative"
+        className="h-32 w-32 rounded-full shadow-xl overflow-hidden z-10 relative"
       >
-        {/* <motion.img
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          src={urlFor(homeInfo?.profilePic).url()}
-          alt="your dev"
-          className="relative object-cover"
-        /> */}
         <Image
           src={urlFor(homeInfo?.profilePic).url()}
           alt={""}
@@ -80,25 +71,44 @@ const Hero = ({ homeInfo }: HeroProps) => {
             delay: 0.6,
             //   transitionDelay: 3,
           }}
-          className="text-[#F1FAEE] text-4xl md:text-5xl font-semibold mt-2 z-10"
+          className="text-[#140e2c] text-4xl md:text-5xl font-semibold mt-2 z-10"
         >
           {homeInfo.name}
         </motion.h1>
 
-        <div className="mt-12 whitespace-nowrap px-12 flex gap-8 md:gap-16">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 2,
+            staggerChildren: 0.5,
+          }}
+          className="mt-12 whitespace-nowrap px-12 flex text-[#140e2c] gap-8 md:gap-16"
+        >
           <Link href="#experience">
-            <button className="heroButton">Experience</button>
+            <motion.button className="heroButton text-[#140e2c]">
+              Experience
+            </motion.button>
           </Link>
-          <Link href="#about">
-            <button className="heroButton">About</button>
+          <Link href="#about text-[#140e2c]">
+            <motion.button className="heroButton text-[#140e2c]">
+              About
+            </motion.button>
           </Link>
           <Link href="#skills">
-            <button className="heroButton">Skills</button>
+            <motion.button className="heroButton text-[#140e2c]">
+              Skills
+            </motion.button>
           </Link>
           <Link href="#projects">
-            <button className="heroButton">Projects</button>
+            <motion.button className="heroButton text-[#140e2c]">
+              Projects
+            </motion.button>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
