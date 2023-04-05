@@ -8,6 +8,7 @@ import { EnvelopeIcon } from "@heroicons/react/24/outline";
 type Props = { socials: Social[] };
 
 const Header = ({ socials }: Props) => {
+
   return (
     <header className="flex justify-between sticky top-0 p-5 items-center max-w-7xl mx-auto z-20 xl:items-center">
       <motion.div
@@ -24,16 +25,14 @@ const Header = ({ socials }: Props) => {
         }}
         className="flex flex-row items-center"
       >
-        {socials.map((social) => {
-          return (
-            <SocialIcon
-              key={social._id}
-              url={social.url}
-              fgColor="#140e2c"
-              bgColor="transparent"
-            />
-          );
-        })}
+        {socials.map((social) => (
+          <SocialIcon
+            key={social._id}
+            url={social.url}
+            fgColor="#140e2c"
+            bgColor="transparent"
+          />
+        ))}
       </motion.div>
 
       <motion.div

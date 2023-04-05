@@ -14,7 +14,7 @@ const About = ({ aboutInfo }: Props) => {
         transition={{ duration: 0.6 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: false }}
-        className="absolute top-24 uppercase tracking-[20px] text-2xl text-[#140e2c] "
+        className="absolute top-24 md:top-20 pl-5 uppercase tracking-[20px] text-xl text-[#140e2c] "
       >
         About
       </motion.h3>
@@ -37,7 +37,7 @@ const About = ({ aboutInfo }: Props) => {
           transition={{ duration: 1.2 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: false }}
-          className="text-center text-base max-w-[500px] mt-4"
+          className="text-center text-sm max-w-[500px] mt-4"
         >
           <h3>{aboutInfo.backgroundInfromation}</h3>
         </motion.div>

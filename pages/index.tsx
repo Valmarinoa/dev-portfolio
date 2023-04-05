@@ -1,9 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
-import type { NextApiRequest, NextApiResponse } from "next";
-import { groq } from "next-sanity";
-import { sanityClient } from "../sanity";
-// import { Experience } from "../typings";
-import Image from "next/image";
+import { createClient } from "next-sanity";
+import createImageUrl from "@sanity/image-url";
 import Head from "next/head";
 import Header from "../components/header/Header";
 import Hero from "../components/hero/Hero";
@@ -14,23 +11,20 @@ import Skills from "../components/skills/Skills";
 import Projects from "../components/projects/Projects";
 import ContactMe from "../components/contact/ContactMe";
 import { Experience, Skill, Social, Project, HomeInfo } from "../typings";
-// import { GetStaticProps } from "next";
-// import { fetchHomeInfo } from "../utils/fetchHomeInfo";
-// import { fetchExperiences } from "../utils/fetchExperiences";
-// import { fetchSocials } from "../utils/fetchSocials";
-// import { fetchProjects } from "../utils/fetchProjects";
-// import { fetchSkills } from "../utils/fetchSkills";
+
 import { motion } from "framer-motion";
 
 type Props = {
-  // homeInfo: HomeInfo;
+  homeInfo: HomeInfo;
   experiences: Experience[];
-  // skills: Skill[];
-  // socials: Social[];
-  // projects: Project[];
+  skills: Skill[];
+  socials: Social[];
+  projects: Project[];
 };
 
-const Home = ({ experiences }: Props) => {
+const Home = ({ homeInfo, socials, experiences, skills, projects }: Props) => {
+  console.log(projects.map((pr) => pr.title));
+
   return (
     <div className="scrollbar-thin scrollbar-track-neutral-100/20 scrollbar-thumb-neutral-100/50 bg-indigo-300 h-screen text-[#140e2c] snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0">
       <motion.video
@@ -62,14 +56,14 @@ const Home = ({ experiences }: Props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <Header socials={socials} /> */}
+      <Header socials={socials} />
 
       <section id="hero" className="snap-start scroll-smooth">
-        {/* <Hero homeInfo={homeInfo} /> */}
+        <Hero homeInfo={homeInfo} />
       </section>
 
       <section id="about" className="snap-center scroll-smooth">
-        {/* <About aboutInfo={homeInfo} /> */}
+        <About aboutInfo={homeInfo} />
       </section>
 
       <section id="experiences" className="snap-center scroll-smooth">
@@ -77,11 +71,11 @@ const Home = ({ experiences }: Props) => {
       </section>
 
       <section id="skills" className="snap-start scroll-smooth">
-        {/* <Skills skills={skills} /> */}
+        <Skills skills={skills} />
       </section>
 
       <section id="projects" className="snap-start scroll-smooth">
-        {/* <Projects projects={projects} /> */}
+        <Projects projects={projects} />
       </section>
 
       <section id="contact" className="snap-start scroll-smooth">
@@ -93,49 +87,36 @@ const Home = ({ experiences }: Props) => {
 
 export default Home;
 
+const client = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
+  apiVersion: "2022-03-25",
+  useCdn: process.env.NODE_ENV === "production",
+});
+
+const urlFor = (source: any) => createImageUrl(client).image(source);
+
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  // const homeInfo: HomeInfo = await fetchHomeInfo();
-
-  // const socials: Social[] = await fetchSocials();
-  // const projects: Project[] = await fetchProjects();
-  // const skills: Skill[] = await fetchSkills();
-
-  const query = groq`
-*[_type == "experience"]{
+  const homeInfo: HomeInfo = await client.fetch(`*[_type == "pageInfo"][0]`);
+  const experiences: Experience[] =
+    await client.fetch(`*[_type == "experience"]{
+      ...,
+      technologies[]->
+    }`);
+  const socials: Social[] = await client.fetch(`*[_type == "socials"]`);
+  const projects: Project[] = await client.fetch(`*[_type == "project"]{
     ...,
     technologies[]->
-  }
-`;
+  }`);
+  const skills: Skill[] = await client.fetch(`*[_type == "skills"]`);
 
-  type Data = {
-    experiences: Experience[];
-  };
-
-  async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-    const experiences: Experience[] = await sanityClient.fetch(query);
-    res.status(200).json({ experiences });
-  }
-  const fetchExperiences = async () => {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/getExperience`
-    );
-
-    const data = await res.json();
-    const experiences: Experience[] = data.experiences;
-
-    console.log("fetching", experiences);
-
-    return experiences;
-  };
-
-  const experiences: Experience[] = await fetchExperiences();
   return {
     props: {
-      // homeInfo,
+      homeInfo,
       experiences,
-      // skills,
-      // socials,
-      // projects,
+      socials,
+      skills,
+      projects,
     },
 
     //Next.js will attempt to re-generate the page:

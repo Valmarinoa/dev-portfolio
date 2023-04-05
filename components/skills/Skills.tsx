@@ -14,22 +14,20 @@ const Skills = ({ skills }: Props) => {
       transition={{ duration: 1.5 }}
       className="h-screen flex w-[90%] relative flex-col text-center md:text-left xl:flex-row max-w-[1000px] min-h-screen justify-center xl:space-y-0 mx-auto items-center"
     >
-      <h3 className="absolute top-20 uppercase tracking-[10px] text-[#140e2c] md:tracking-[20px] text-2xl">
+      <h3 className="absolute top-24 md:top-20 uppercase tracking-[10px] text-[#140e2c] md:tracking-[20px] pl-5 text-xl">
         Skills
       </h3>
       <div className="grid grid-cols-4 md:gap-5">
-        {skills?.map((eachSkill, i) => {
-          return (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: i * 0.2 }}
-              key={eachSkill._id}
-            >
-              <EachSkill key={i} eachSkill={eachSkill} />
-            </motion.div>
-          );
-        })}
+        {skills?.map((eachSkill, i) => (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: i * 0.2 }}
+            key={eachSkill._id}
+          >
+            <EachSkill key={i} eachSkill={eachSkill} />
+          </motion.div>
+        ))}
         {/* 
         {skills?.slice(0, skills.length / 2).map((eachSkill, i) => {
           return (
