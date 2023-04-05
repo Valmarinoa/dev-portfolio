@@ -20,7 +20,7 @@ const EachSkill = ({ directionLeft, eachSkill }: Props) => {
         }}
         transition={{ duration: 1 }}
         whileInView={{ opacity: 1, x: 0 }}
-        className="w-20 h-20 group rounded-md relative cursor-pointer object-contain"
+        className="w-[70px] h-[70px] md:h-20 md:w-20 group rounded-md relative cursor-pointer object-contain"
       >
         {eachSkill.skillImage && (
           <>

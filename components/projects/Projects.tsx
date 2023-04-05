@@ -48,13 +48,15 @@ const Projects = ({ projects }: Props) => {
 
                   <span className="underline decoration-white/50">
                     <a href={project.linkToBuild} className="no-underline">
-                      <p className="text-xl">{project.title}</p>
+                      <p className="text-xl mb-3">{project.title}</p>
                     </a>
                   </span>
                 </h3>
 
                 <p className="text-xs opacity-50">{project.note}</p>
-                <p className="text-xs text-center px-2">{project.summary}</p>
+                <p className="text-sm text-center px-2 mb-3">
+                  {project.summary}
+                </p>
 
                 {/* <div className="h-[1px] w-20 bg-white mx-auto"></div> */}
                 <div className="flex items-center gap-2 h-fit flex-wrap justify-center mt-3">
@@ -62,7 +64,7 @@ const Projects = ({ projects }: Props) => {
                     return (
                       <p
                         key={tech.title}
-                        className="text-xs border text-center rounded-full px-2 py-[2px] hover:bg-white/20 transition-all"
+                        className="text-xs border text-center rounded-full px-2 py-[2px] hover:bg-indigo-300/20 transition-all"
                       >
                         {tech.title}
                       </p>
