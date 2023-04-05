@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import reactlogo from "../../../public/react.png";
 import { Skill } from "../../../typings";
 import { urlFor } from "../../../sanity";
@@ -20,16 +20,19 @@ const EachSkill = ({ directionLeft, eachSkill }: Props) => {
         }}
         transition={{ duration: 1 }}
         whileInView={{ opacity: 1, x: 0 }}
-        className="w-[70px] h-[70px] md:h-20 md:w-20 group rounded-md relative cursor-pointer object-contain"
+        className=" group w-[60px] h-[60px] md:h-16 md:w-16 rounded-md relative cursor-pointer object-contain"
       >
         {eachSkill.skillImage && (
           <>
-            <img
-              src={urlFor(eachSkill.skillImage).url()}
-              alt="Technology logo"
-              className="relative p-2 group-hover:blur-md w-full h-full transition duration-300 ease-in-out object-contain"
-            />
-
+            <div className="hover:backdrop-blur-md w-fit h-fit">
+              <Image
+                src={urlFor(eachSkill.skillImage).url()}
+                alt="Technology logo"
+                layout="fill"
+                priority
+                className="relative p-2 w-full h-full transition duration-300 ease-in-out object-contain"
+              />
+            </div>
             <div className="absolute top-0 left-0 opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out w-full h-full rounded-full z-0">
               <div className="flex items-center justify-center h-full">
                 <p className="text-xs text-black whitespace-nowrap">

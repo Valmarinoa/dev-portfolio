@@ -22,6 +22,7 @@ const Header = ({ socials }: Props) => {
         }}
         transition={{
           duration: 1.5,
+          delay: 0.9,
         }}
         className="flex flex-row items-center"
       >
@@ -46,6 +47,7 @@ const Header = ({ socials }: Props) => {
         }}
         transition={{
           duration: 1.5,
+          delay: 0.9,
         }}
         className="flex items-center"
       >

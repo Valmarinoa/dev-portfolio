@@ -17,7 +17,7 @@ const Skills = ({ skills }: Props) => {
       <h3 className="absolute top-24 md:top-20 uppercase tracking-[10px] text-[#140e2c] md:tracking-[20px] pl-5 text-xl">
         Skills
       </h3>
-      <div className="grid grid-cols-4 gap-[9px] md:gap-5">
+      <div className="grid grid-cols-4 gap-5 md:gap-6">
         {skills?.map((eachSkill, i) => (
           <motion.div
             initial={{ opacity: 0 }}

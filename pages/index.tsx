@@ -33,7 +33,7 @@ const Home = ({ homeInfo, socials, experiences, skills, projects }: Props) => {
           opacity: 1,
         }}
         transition={{
-          duration: 0.4,
+          duration: 0.6,
           delay: 0.3,
         }}
         autoPlay
@@ -41,15 +41,15 @@ const Home = ({ homeInfo, socials, experiences, skills, projects }: Props) => {
         loop
         src={"/aguabg.mp4"}
         style={{
-          height: "110vh",
+          height: "100vh",
           position: "absolute",
-          width: "120vw",
+          width: "100vw",
           objectPosition: "top",
           objectFit: "cover",
           // filter: "blur(20px)",
         }}
       />
-      <div className="absolute h-screen w-screen backdrop-blur-md z-1"></div>
+      <div className="absolute h-screen w-screen backdrop-blur-sm z-1"></div>
 
       <Head>
         <title>Vals Portfolio</title>

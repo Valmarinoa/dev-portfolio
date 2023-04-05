@@ -20,10 +20,10 @@ const About = ({ aboutInfo }: Props) => {
       </motion.h3>
       <motion.div className="flex flex-col md:flex-row md:gap-x-10 justify-center w-[80%] items-center">
         <motion.div
-          className=""
-          initial={{ x: -50, opacity: 0 }}
-          transition={{ duration: 1.2 }}
-          whileInView={{ x: 0, opacity: 1 }}
+          // className=""
+          initial={{ opacity: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: false }}
         >
           <Image
@@ -33,13 +33,14 @@ const About = ({ aboutInfo }: Props) => {
           />
         </motion.div>
         <motion.div
-          initial={{ x: 50, opacity: 0 }}
-          transition={{ duration: 1.2 }}
-          whileInView={{ x: 0, opacity: 1 }}
+          initial={{ opacity: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: false }}
-          className="text-center text-sm max-w-[500px] mt-4"
         >
-          <h3>{aboutInfo.backgroundInfromation}</h3>
+          <h3 className="text-center text-sm max-w-[500px] md:mt-4">
+            {aboutInfo.backgroundInfromation}
+          </h3>
         </motion.div>
       </motion.div>
     </div>

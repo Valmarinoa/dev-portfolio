@@ -23,11 +23,14 @@ const Hero = ({ homeInfo }: HeroProps) => {
 
   return (
     <div className="h-screen flex flex-col items-center justify-center text-center z-10 overflow-hidden text-[#140e2c]">
-      <div className="md:mt-10">{/* <BackgroundCircles /> */}</div>
-
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.6,
+          delay: 0.6,
+          //   transitionDelay: 3,
+        }}
         className="h-32 w-32 rounded-full shadow-xl overflow-hidden z-10 relative"
       >
         <Image
@@ -68,7 +71,7 @@ const Hero = ({ homeInfo }: HeroProps) => {
           }}
           transition={{
             duration: 0.4,
-            delay: 0.6,
+            delay: 0.7,
             //   transitionDelay: 3,
           }}
           className="text-[#140e2c] text-4xl md:text-5xl font-semibold mt-2 z-10"

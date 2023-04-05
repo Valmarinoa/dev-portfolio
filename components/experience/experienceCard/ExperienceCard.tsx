@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Experience } from "../../../typings";
 import { urlFor } from "../../../sanity";
+import Image from "next/legacy/image";
+import { motion } from "framer-motion";
 
 type Props = { experience: Experience };
 
@@ -14,9 +16,11 @@ const ExperienceCard = ({ experience }: Props) => {
       onClick={toggleInfo}
     >
       <div className="w-16 h-16 md:h-20 md:w-20 mx-auto rounded-full relative ">
-        <img
+        <Image
           src={urlFor(experience.companyImage).url()}
           alt={experience.company}
+          layout="fill"
+          priority
         />
       </div>
       <div className="px-2 flex flex-1 md:pl-6">
@@ -37,11 +41,18 @@ const ExperienceCard = ({ experience }: Props) => {
           </span>
           {/* Mobile */}
           <p
-            className={`text-sm pt-2 md:pt-6 md:hidden ${
+            className={`text-sm pt-2 md:pt-6 md:hidden text-[#140e2c] ${
               open ? "block" : "hidden"
             }`}
           >
-            {experience.role}
+            <motion.div
+              initial={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: false }}
+            >
+              {experience.role}
+            </motion.div>
           </p>
         </div>
       </div>
