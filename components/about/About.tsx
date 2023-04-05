@@ -29,7 +29,7 @@ const About = ({ aboutInfo }: Props) => {
           <Image
             src={aboutpic}
             alt="About your developer<3"
-            className="shadow-xl rounded-full object-cover md:rounded-sm flex-shrink-0 max-w-[350px] w-full"
+            className="shadow-xl rounded-full object-cover md:rounded-sm flex-shrink-0 max-w-[250px] min-w-[155px] w-full"
           />
         </motion.div>
         <motion.div

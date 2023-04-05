@@ -22,7 +22,7 @@ const Projects = ({ projects }: Props) => {
         {projects?.map((project, i) => (
           <div
             key={i}
-            className="w-screen flex-shrink-0 snap-center cursor-pointer flex flex-col space-y-5 items-center justify-between p-6 md:w-[30%] h-[80%]"
+            className="w-screen flex-shrink-0 snap-center mt-28 cursor-pointer flex flex-col space-y-5 items-center justify-between p-6 md:w-[30%] h-[80%]"
           >
             {/* {Image of Project} */}
 
@@ -54,7 +54,7 @@ const Projects = ({ projects }: Props) => {
                 </h3>
 
                 <p className="text-xs opacity-50">{project.note}</p>
-                <p className="text-sm text-center px-2 mb-3">
+                <p className="text-sm lg:text-sm md:text-xs text-center px-2 mb-3">
                   {project.summary}
                 </p>
 

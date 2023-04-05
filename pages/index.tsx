@@ -46,9 +46,10 @@ const Home = ({ homeInfo, socials, experiences, skills, projects }: Props) => {
           width: "120vw",
           objectPosition: "top",
           objectFit: "cover",
-          filter: "blur(10px)",
+          // filter: "blur(20px)",
         }}
       />
+      <div className="absolute h-screen w-screen backdrop-blur-md z-1"></div>
 
       <Head>
         <title>Vals Portfolio</title>
@@ -58,27 +59,27 @@ const Home = ({ homeInfo, socials, experiences, skills, projects }: Props) => {
       </Head>
       <Header socials={socials} />
 
-      <section id="hero" className="snap-start scroll-smooth">
+      <section id="hero" className="snap-start scroll-smooth z-50">
         <Hero homeInfo={homeInfo} />
       </section>
 
-      <section id="about" className="snap-center scroll-smooth">
+      <section id="about" className="snap-center scroll-smooth z-50">
         <About aboutInfo={homeInfo} />
       </section>
 
-      <section id="experiences" className="snap-center scroll-smooth">
+      <section id="experiences" className="snap-center scroll-smooth z-50">
         <ExperienceComponent experiences={experiences} />
       </section>
 
-      <section id="skills" className="snap-start scroll-smooth">
+      <section id="skills" className="snap-start scroll-smooth z-50">
         <Skills skills={skills} />
       </section>
 
-      <section id="projects" className="snap-start scroll-smooth">
+      <section id="projects" className="snap-start scroll-smooth z-50">
         <Projects projects={projects} />
       </section>
 
-      <section id="contact" className="snap-start scroll-smooth">
+      <section id="contact" className="snap-start scroll-smooth z-50">
         <ContactMe />
       </section>
     </div>
