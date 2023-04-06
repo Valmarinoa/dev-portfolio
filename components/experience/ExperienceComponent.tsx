@@ -14,11 +14,7 @@ const ExperienceComponent = ({ experiences }: Props) => {
       <h3 className="absolute pl-5 top-24 md:top-20 uppercase tracking-[20px] text-xl text-[#140e2c] mb-6">
         Experience
       </h3>
-      {/* <div className="w-full flex flex-col space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory">
-        {experiences.map((single) => (
-          <ExperienceCard experience={single} key={single._id} />
-        ))}
-      </div> */}
+
       <div className="w-full flex flex-col mt-16 h-[70%] overflow-y-scroll">
         {experiences.map((single, i) => (
           <motion.div

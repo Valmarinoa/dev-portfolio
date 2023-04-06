@@ -24,9 +24,6 @@ const ContactMe = (props: Props) => {
         Lets talk!
       </h3>
       <div className="flex flex-col space-y-4 my-5">
-        {/* <h4 className="text-4xl font-semibold text-center">
-          <div className="decortaion-white/50 underline">Let's talk!</div>
-        </h4> */}
         <div className="space-y-2 text-sm">
           <div className="flex items-center justify-center space-x-5">
             <PhoneIcon className=" h-4 w-4 animate-pulse " />

@@ -4,7 +4,6 @@ import createImageUrl from "@sanity/image-url";
 import Head from "next/head";
 import Header from "../components/header/Header";
 import Hero from "../components/hero/Hero";
-import gradient from "../public/bg-grdaient.png";
 import About from "../components/about/About";
 import ExperienceComponent from "../components/experience/ExperienceComponent";
 import Skills from "../components/skills/Skills";

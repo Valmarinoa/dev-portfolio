@@ -58,7 +58,6 @@ const Projects = ({ projects }: Props) => {
                   {project.summary}
                 </p>
 
-                {/* <div className="h-[1px] w-20 bg-white mx-auto"></div> */}
                 <div className="flex items-center gap-2 h-fit flex-wrap justify-center mt-3">
                   {project.technologies.map((tech, i) => {
                     return (

@@ -29,7 +29,6 @@ const Hero = ({ homeInfo }: HeroProps) => {
         transition={{
           duration: 0.6,
           delay: 0.6,
-          //   transitionDelay: 3,
         }}
         className="h-32 w-32 rounded-full shadow-xl overflow-hidden z-10 relative"
       >
@@ -49,7 +48,6 @@ const Hero = ({ homeInfo }: HeroProps) => {
           transition={{
             duration: 0.6,
             delay: 2,
-            //   transitionDelay: 3,
           }}
           className="opacity-20 uppercase mt-[5px] "
         >
@@ -72,7 +70,6 @@ const Hero = ({ homeInfo }: HeroProps) => {
           transition={{
             duration: 0.4,
             delay: 0.7,
-            //   transitionDelay: 3,
           }}
           className="text-[#140e2c] text-4xl md:text-5xl font-semibold mt-2 z-10"
         >
