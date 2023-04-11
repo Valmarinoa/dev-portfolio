@@ -46,7 +46,6 @@ const Home = ({ homeInfo, socials, experiences, skills, projects }: Props) => {
         autoPlay
         muted
         loop
-        src={"/aguabg.mp4"}
         style={{
           height: "100vh",
           position: "absolute",
@@ -55,7 +54,9 @@ const Home = ({ homeInfo, socials, experiences, skills, projects }: Props) => {
           objectFit: "cover",
           // filter: "blur(20px)",
         }}
-      />
+      >
+        <source src={"/aguabg.mp4"} />
+      </motion.video>
       <div className="absolute h-screen w-screen backdrop-blur-sm z-1"></div>
 
       <Head>
