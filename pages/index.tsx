@@ -12,6 +12,7 @@ import ContactMe from "../components/contact/ContactMe";
 import { Experience, Skill, Social, Project, HomeInfo } from "../typings";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 type Props = {
   homeInfo: HomeInfo;
@@ -22,7 +23,13 @@ type Props = {
 };
 
 const Home = ({ homeInfo, socials, experiences, skills, projects }: Props) => {
-  console.log(projects.map((pr) => pr.title));
+  const [toggleDirection, setToggleDirection] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const hovered = () => setIsHovered(!isHovered);
+
+  const toggleBackToTop = () =>
+    setToggleDirection(toggleDirection === 0 ? 20 : 0);
 
   return (
     <div className="scrollbar-thin scrollbar-track-neutral-100/20 scrollbar-thumb-neutral-100/50 bg-indigo-300 h-screen text-[#140e2c] snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0">
@@ -35,6 +42,7 @@ const Home = ({ homeInfo, socials, experiences, skills, projects }: Props) => {
           duration: 0.6,
           delay: 0.3,
         }}
+        playsInline
         autoPlay
         muted
         loop
@@ -81,6 +89,16 @@ const Home = ({ homeInfo, socials, experiences, skills, projects }: Props) => {
       <section id="contact" className="snap-start scroll-smooth z-50">
         <ContactMe />
       </section>
+      {/* <div className="w-full absolute bottom-6 z-50 h-fit items-center flex justify-center">
+        <div
+          className="bg-green-200 flex items-center gap-2"
+        >
+          <div className="h-6 w-6 bg-indigo-300 rounded-full cursor-pointer"></div>
+          <p className={isHovered == true ? "bg-yellow-400" : "bg-red-600"}>
+            back to top
+          </p>
+        </div>
+      </div> */}
     </div>
   );
 };

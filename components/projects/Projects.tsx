@@ -15,9 +15,15 @@ const Projects = ({ projects }: Props) => {
       transition={{ duration: 1.5 }}
       className="h-screen relative flex overflow-hidden flex-col md:flex-row text-left max-w-full justify-evenly mx-auto items-center z-0"
     >
-      <h3 className="absolute pl-5 top-24 md:top-20 uppercase text-[#140e2c] tracking-[10px] md:tracking-[20px] text-xl text-center">
+      <motion.h3
+        initial={{ y: -20, opacity: 0 }}
+        transition={{ duration: 0.6 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: false }}
+        className="absolute pl-5 top-24 md:top-20 uppercase text-[#140e2c] tracking-[10px] md:tracking-[20px] text-xl text-center"
+      >
         Projects
-      </h3>
+      </motion.h3>
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20  scrollbar-thin">
         {projects?.map((project, i) => (
           <div
