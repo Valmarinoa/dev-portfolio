@@ -18,26 +18,25 @@ const About = ({ aboutInfo }: Props) => {
       >
         About
       </motion.h1>
-      <motion.div
-        initial={{ opacity: 0 }}
-        transition={{ duration: 0.8, delay: 0.8 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: false }}
-        className="flex flex-col md:flex-row md:gap-x-10 justify-center w-full md:w-1/2 items-center"
-      >
-        <div>
+      <div className="flex flex-col md:flex-row md:gap-x-10 justify-center w-full md:w-1/2 items-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: false }}
+        >
           <Image
             src={aboutpic}
             alt="About your developer<3"
             className="shadow-xl rounded-full object-cover flex-shrink-0 max-w-[250px] min-w-[155px] w-full"
           />
-        </div>
+        </motion.div>
         <div>
           <p className="text-center text-sm  mt-4 w-full">
             {aboutInfo.backgroundInfromation}
           </p>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

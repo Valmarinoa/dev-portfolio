@@ -56,7 +56,7 @@ const ContactMe = (props: Props) => {
             className="flex flex-col space-y-2 md:mx-auto pt-4 w-80 md:w-[420px] mx-0"
           >
             <div className="flex flex-col space-y-2">
-              <label className="hidden">name</label>
+              {/* <label className="hidden">name</label> */}
               <input
                 placeholder="Name"
                 {...register("name")}
@@ -72,7 +72,7 @@ const ContactMe = (props: Props) => {
               />
             </div>
             <div>
-              <label className="hidden">email</label>
+              {/* <label className="hidden">email</label> */}
               <input
                 {...register("subject")}
                 placeholder="Subject"
@@ -80,9 +80,9 @@ const ContactMe = (props: Props) => {
                 type="text"
               />
             </div>
-            <label htmlFor="" className="hidden">
+            {/* <label htmlFor="" className="hidden">
               message
-            </label>
+            </label> */}
             <textarea
               placeholder="Message"
               {...register("message")}
