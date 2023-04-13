@@ -28,7 +28,7 @@ const ContactMe = (props: Props) => {
         viewport={{ once: false }}
         className="absolute top-24 md:top-16 pl-5 uppercase text-[#140e2c] tracking-[10px] md:tracking-[0.75em] text-xl text-center"
       >
-        Let's talk!
+        Lets talk!
       </motion.h3>
       <motion.div
         initial={{ opacity: 0 }}

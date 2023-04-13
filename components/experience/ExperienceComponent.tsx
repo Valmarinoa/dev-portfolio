@@ -29,7 +29,7 @@ const ExperienceComponent = ({ experiences }: Props) => {
 
       <motion.div
         initial={{ opacity: 0 }}
-        transition={{ duration: 0.7, delay: 0.6 }}
+        transition={{ duration: 0.7, delay: 0.3 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: false }}
         className="w-full flex flex-col mt-28 h-[70%] overflow-y-scroll"
@@ -37,7 +37,7 @@ const ExperienceComponent = ({ experiences }: Props) => {
         {experiences.map((single, i) => (
           <motion.div
             initial={{ y: -30, opacity: 0 }}
-            transition={{ duration: 0.8, delay: i * 0.2 }}
+            transition={{ duration: 0.6, delay: i * 0.2 }}
             whileInView={{ opacity: 1, y: 0 }}
             key={single._id}
           >
