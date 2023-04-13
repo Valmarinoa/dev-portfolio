@@ -12,7 +12,7 @@ const ExperienceCard = ({ experience }: Props) => {
 
   return (
     <div
-      className="w-full flex border-b border-spacing-1 py-6 text-left cursor-pointer"
+      className="w-full flex border-b border-spacing-1 py-6 text-left"
       onClick={toggleInfo}
     >
       <div className="w-16 h-16 md:h-20 md:w-20 mx-auto rounded-full relative ">

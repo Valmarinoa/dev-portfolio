@@ -47,6 +47,7 @@ const Home = ({ homeInfo, socials, experiences, skills, projects }: Props) => {
           backgroundColor: "white",
           backgroundPosition: "top right",
         }}
+        className="lg:blur-lg"
       >
         <source src={"/aguabg.mp4"} />
       </motion.video>
