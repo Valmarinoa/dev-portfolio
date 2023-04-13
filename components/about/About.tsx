@@ -31,11 +31,16 @@ const About = ({ aboutInfo }: Props) => {
             className="shadow-xl rounded-full object-cover flex-shrink-0 max-w-[250px] min-w-[155px] w-full"
           />
         </motion.div>
-        <div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: false }}
+        >
           <p className="text-center text-sm  mt-4 w-full">
             {aboutInfo.backgroundInfromation}
           </p>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
