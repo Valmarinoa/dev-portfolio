@@ -36,9 +36,9 @@ const ExperienceComponent = ({ experiences }: Props) => {
       >
         {experiences.map((single, i) => (
           <motion.div
-            initial={{ y: -30, opacity: 0 }}
+            initial={{ opacity: 0 }}
             transition={{ duration: 0.6, delay: i * 0.2 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1 }}
             key={single._id}
           >
             <ExperienceCard experience={single} key={single._id} />
