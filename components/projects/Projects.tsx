@@ -9,14 +9,14 @@ type Props = { projects: Project[] };
 
 const Projects = ({ projects }: Props) => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
+    <div
+      // initial={{ opacity: 0 }}
+      // whileInView={{ opacity: 1 }}
+      // transition={{ duration: 1.5 }}
       className="h-screen relative flex overflow-hidden flex-col md:flex-row text-left max-w-full justify-evenly mx-auto items-center z-0"
     >
       <motion.h3
-        initial={{ y: -20, opacity: 0 }}
+        initial={{ y: 30, opacity: 0 }}
         transition={{ duration: 0.6 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: false }}
@@ -24,7 +24,13 @@ const Projects = ({ projects }: Props) => {
       >
         Projects
       </motion.h3>
-      <div className="relative w-full flex overflow-x-scroll scrollbar-track-transparent scrollbar-thumb-indigo-400 scrollbar-thin-rounded-full scrollbar-thin overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-rounded-full">
+      <motion.div
+        initial={{ opacity: 0 }}
+        transition={{ duration: 0.7, delay: 0.6 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: false }}
+        className="relative w-full flex overflow-x-scroll scrollbar-track-transparent scrollbar-thumb-indigo-400 scrollbar-thin-rounded-full scrollbar-thin overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-rounded-full"
+      >
         {projects?.map((project, i) => (
           <div
             key={i}
@@ -35,10 +41,10 @@ const Projects = ({ projects }: Props) => {
             <div className="space-y-2 max-w-6xl text-center items-center md:hover:scale-105 md:grayscale hover:grayscale-0 border-transparent rounded-md p-4 transition-all">
               <a href={project.linkToBuild}>
                 <motion.img
-                  initial={{ y: -60, opacity: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  initial={{ y: -30, opacity: 0 }}
+                  transition={{ duration: 0.8, delay: i * 0.1 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false }}
                   className="w-full mx-auto object-contain max-w-[550px] rounded-xl "
                   src={urlFor(project.image).url()}
                   alt={project.title}
@@ -46,10 +52,10 @@ const Projects = ({ projects }: Props) => {
               </a>
 
               <motion.div
-                initial={{ y: 60, opacity: 0 }}
+                initial={{ y: 30, opacity: 0 }}
                 transition={{ duration: 0.8, delay: i * 0.1 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
               >
                 <h3 className="text-center font-semibold">
                   {/* Subtitle Project */}
@@ -85,8 +91,8 @@ const Projects = ({ projects }: Props) => {
             </div>
           </div>
         ))}
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 };
 

@@ -23,25 +23,25 @@ const ExperienceCard = ({ experience }: Props) => {
           priority
         />
       </div>
-      <div className="px-2 flex flex-1 md:pl-6">
+      <div className="pl-2 flex flex-1 md:pl-6">
         <div className="flex flex-col">
-          <p className="text-xs">
+          <p className="text-sm">
             {new Date(experience.dateStarted).toDateString()} -{" "}
             {experience.isCurrentlyWorkingHere
               ? "Present"
               : new Date(experience.dateEnded).toDateString()}
           </p>
-          <h4 className="text-base md:text-xl">{experience.jobTitle}</h4>
+          <h4 className="text-lg md:text-xl">{experience.jobTitle}</h4>
 
-          <span className="flex gap-2 divide-x-[1px] items-center">
-            <p className="font-semibold text-xs md:text-base">
+          <span className="flex gap-2 divide-x-[1px] divide-[#140e2c] items-center">
+            <p className="font-semibold text-sm md:text-base">
               {experience.company}
             </p>
-            <p className=" text-xs font-light pl-2">{experience.nature}</p>
+            <p className=" text-sm font-light pl-2">{experience.nature}</p>
           </span>
           {/* Mobile */}
           <div
-            className={`text-sm pt-2 md:pt-6 md:hidden text-[#140e2c] ${
+            className={`text-sm pt-6 md:pt-6 md:hidden text-[#140e2c] ${
               open ? "block" : "hidden"
             }`}
           >
@@ -52,6 +52,7 @@ const ExperienceCard = ({ experience }: Props) => {
               transition={{ duration: 0.4 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
+              className="text-sm"
             >
               {experience.role}
             </motion.p>
@@ -59,7 +60,7 @@ const ExperienceCard = ({ experience }: Props) => {
         </div>
       </div>
       <div className=" md:flex-1 hidden md:flex">
-        <p className="text-xs hidden md:flex">{experience.role}</p>
+        <p className="text-sm hidden md:flex">{experience.role}</p>
       </div>
     </div>
   );

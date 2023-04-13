@@ -9,14 +9,15 @@ type Props = { skills: Skill[] };
 const Skills = ({ skills }: Props) => {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
+      initial={{ y: 30, opacity: 0 }}
+      transition={{ duration: 0.6 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: false }}
       className="h-screen flex w-[90%] relative flex-col text-center md:text-left xl:flex-row max-w-[1000px] min-h-screen justify-center xl:space-y-0 mx-auto items-center"
     >
-      <h3 className="absolute top-24 md:top-20 uppercase tracking-[10px] text-[#140e2c] md:tracking-[0.75em] pl-5 text-xl">
+      <h1 className="absolute top-24 md:top-20 uppercase tracking-[10px] text-[#140e2c] md:tracking-[0.75em] pl-5 text-xl">
         Skills
-      </h3>
+      </h1>
       <div className="grid grid-cols-4 gap-5 md:gap-6">
         {skills?.map((eachSkill, i) => (
           <motion.div
@@ -25,7 +26,7 @@ const Skills = ({ skills }: Props) => {
             transition={{ duration: 0.5, delay: i * 0.2 }}
             key={eachSkill._id}
           >
-            <EachSkill key={i} eachSkill={eachSkill} />
+            <EachSkill key={eachSkill.title} eachSkill={eachSkill} />
           </motion.div>
         ))}
         {/* 

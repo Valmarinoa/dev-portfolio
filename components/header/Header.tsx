@@ -63,9 +63,11 @@ const Header = ({ socials }: Props) => {
           bgColor="transparent"
         /> */}
 
-        <p className="uppercase hidden md:inline-flex text-sm">
-          <Link href="#contact">Get in touch </Link>
-        </p>
+        <Link href="#contact">
+          <p className="uppercase hidden md:inline-flex text-sm">
+            Get in touch{" "}
+          </p>{" "}
+        </Link>
       </motion.div>
     </header>
   );

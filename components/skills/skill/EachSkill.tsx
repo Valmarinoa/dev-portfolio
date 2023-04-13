@@ -27,7 +27,7 @@ const EachSkill = ({ directionLeft, eachSkill }: Props) => {
             <div className=" w-fit h-fit overflow-visible">
               <Image
                 src={urlFor(eachSkill.skillImage).url()}
-                alt="Technology logo"
+                alt={eachSkill.title}
                 layout="fill"
                 priority
                 className="relative p-2 w-full h-full transition duration-300 ease-in-out object-contain"
