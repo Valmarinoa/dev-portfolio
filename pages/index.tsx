@@ -113,7 +113,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     await client.fetch(`*[_type == "experience"]{
       ...,
       technologies[]->
-    } | order(startDate desc)
+    } | order(dateStarted desc)
     `);
   const socials: Social[] = await client.fetch(`*[_type == "socials"]`);
   const projects: Project[] = await client.fetch(`*[_type == "project"]{
