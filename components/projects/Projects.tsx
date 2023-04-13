@@ -20,11 +20,11 @@ const Projects = ({ projects }: Props) => {
         transition={{ duration: 0.6 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: false }}
-        className="absolute pl-5 top-24 md:top-20 uppercase text-[#140e2c] tracking-[10px] md:tracking-[20px] text-xl text-center"
+        className="absolute pl-5 top-24 md:top-20 uppercase text-[#140e2c] tracking-[10px] md:tracking-[0.75em] text-xl text-center"
       >
         Projects
       </motion.h3>
-      <div className="relative w-full flex overflow-x-scroll scrollbar-track-transparent scrollbar-thumb-indigo-400 overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-rounded-full">
+      <div className="relative w-full flex overflow-x-scroll scrollbar-track-transparent scrollbar-thumb-indigo-400 scrollbar-thin-rounded-full scrollbar-thin overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-rounded-full">
         {projects?.map((project, i) => (
           <div
             key={i}
@@ -32,16 +32,18 @@ const Projects = ({ projects }: Props) => {
           >
             {/* {Image of Project} */}
 
-            <div className="space-y-2 max-w-6xl text-center items-center hover:scale-105 md:grayscale hover:grayscale-0 border-transparent rounded-md p-4 transition-all">
-              <motion.img
-                initial={{ y: -60, opacity: 0 }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="w-full mx-auto object-contain max-w-[550px] rounded-xl "
-                src={urlFor(project.image).url()}
-                alt={project.title}
-              />
+            <div className="space-y-2 max-w-6xl text-center items-center md:hover:scale-105 md:grayscale hover:grayscale-0 border-transparent rounded-md p-4 transition-all">
+              <a href={project.linkToBuild}>
+                <motion.img
+                  initial={{ y: -60, opacity: 0 }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="w-full mx-auto object-contain max-w-[550px] rounded-xl "
+                  src={urlFor(project.image).url()}
+                  alt={project.title}
+                />
+              </a>
 
               <motion.div
                 initial={{ y: 60, opacity: 0 }}
@@ -69,7 +71,7 @@ const Projects = ({ projects }: Props) => {
                     return (
                       <p
                         key={tech.title}
-                        className="text-xs border text-center rounded-full px-2 py-[2px] hover:bg-indigo-300/20 transition-all"
+                        className="text-xs border text-center rounded-full px-2 py-[2px] bg-indigo-300/20 transition-all"
                       >
                         {tech.title}
                       </p>

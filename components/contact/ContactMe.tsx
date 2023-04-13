@@ -20,7 +20,7 @@ const ContactMe = (props: Props) => {
 
   return (
     <div className="h-screen flex justify-evenly px-10 pt-20 max-w-7xl mx-auto relative text-center md:text-left md:flex-row items-center ">
-      <h3 className="absolute top-24 md:top-16 pl-5 uppercase text-[#140e2c] tracking-[10px] md:tracking-[20px] text-xl text-center">
+      <h3 className="absolute top-24 md:top-16 pl-5 uppercase text-[#140e2c] tracking-[10px] md:tracking-[0.75em] text-xl text-center">
         Lets talk!
       </h3>
       <div className="flex flex-col space-y-4 my-5">

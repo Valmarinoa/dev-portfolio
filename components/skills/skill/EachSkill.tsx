@@ -24,7 +24,7 @@ const EachSkill = ({ directionLeft, eachSkill }: Props) => {
       >
         {eachSkill.skillImage && (
           <>
-            <div className="hover:backdrop-blur-md w-fit h-fit">
+            <div className=" w-fit h-fit overflow-visible">
               <Image
                 src={urlFor(eachSkill.skillImage).url()}
                 alt="Technology logo"
@@ -32,13 +32,6 @@ const EachSkill = ({ directionLeft, eachSkill }: Props) => {
                 priority
                 className="relative p-2 w-full h-full transition duration-300 ease-in-out object-contain"
               />
-            </div>
-            <div className="absolute top-0 left-0 opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out w-full h-full rounded-full z-0">
-              <div className="flex items-center justify-center h-full">
-                <p className="text-xs text-black whitespace-nowrap">
-                  {eachSkill.title}
-                </p>
-              </div>
             </div>
           </>
         )}

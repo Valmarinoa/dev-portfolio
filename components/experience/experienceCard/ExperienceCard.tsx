@@ -31,7 +31,7 @@ const ExperienceCard = ({ experience }: Props) => {
               ? "Present"
               : new Date(experience.dateEnded).toDateString()}
           </p>
-          <h4 className="text-xl md:text-xl">{experience.jobTitle}</h4>
+          <h4 className="text-base md:text-xl">{experience.jobTitle}</h4>
 
           <span className="flex gap-2 divide-x-[1px] items-center">
             <p className="font-semibold text-xs md:text-base">

@@ -61,5 +61,14 @@ export default defineType({
       type: 'array',
       of: [{ type: 'string' }]
     }),
+  ],
+  orderings: [
+    {
+      title: 'Job date',
+      name: 'jobDate',
+      by: [
+        { field: 'dateStarted', direction: 'desc' }
+      ]
+    }
   ]
 })
