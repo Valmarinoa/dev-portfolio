@@ -21,7 +21,7 @@ const About = ({ aboutInfo }: Props) => {
       <div className="flex flex-col md:flex-row md:gap-x-10 justify-center w-full md:w-2/3 items-center">
         <motion.div
           initial={{ opacity: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: false }}
           className="pt-16 md:pt-0"
@@ -38,7 +38,7 @@ const About = ({ aboutInfo }: Props) => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: false }}
         >
-          <p className="text-cente text-sm pt-6 w-full">
+          <p className="text-cente4 text-sm pt-6 w-full">
             {aboutInfo.backgroundInfromation}
           </p>
         </motion.div>

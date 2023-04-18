@@ -19,7 +19,7 @@ const ExperienceComponent = ({ experiences }: Props) => {
     <div className="h-screen flex relative flex-col md:flex-row max-w-[1200px] px-6 md:w-[70%] justify-evenly mx-auto items-center text-left">
       <motion.h1
         initial={{ y: 30, opacity: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.5 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: false }}
         className="absolute pl-5 top-24 md:top-20 uppercase tracking-[20px] text-xl text-[#140e2c] mb-6"
@@ -29,15 +29,15 @@ const ExperienceComponent = ({ experiences }: Props) => {
 
       <motion.div
         initial={{ opacity: 0 }}
-        transition={{ duration: 0.7, delay: 0.3 }}
+        transition={{ duration: 0.5 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: false }}
+        viewport={{ once: true }}
         className="w-full flex flex-col mt-28 h-[70%] overflow-y-scroll"
       >
         {experiences.map((single, i) => (
           <motion.div
             initial={{ opacity: 0 }}
-            transition={{ duration: 0.6, delay: i * 0.2 }}
+            transition={{ duration: 0.5, delay: i * 0.2 }}
             whileInView={{ opacity: 1 }}
             key={single._id}
           >
