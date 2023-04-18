@@ -18,17 +18,18 @@ const About = ({ aboutInfo }: Props) => {
       >
         About
       </motion.h1>
-      <div className="flex flex-col md:flex-row md:gap-x-10 justify-center w-full md:w-1/2 items-center">
+      <div className="flex flex-col md:flex-row md:gap-x-10 justify-center w-full md:w-2/3 items-center">
         <motion.div
           initial={{ opacity: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: false }}
+          className="pt-16 md:pt-0"
         >
           <Image
             src={aboutpic}
             alt="About your developer<3"
-            className="shadow-xl rounded-full object-cover flex-shrink-0 max-w-[250px] min-w-[155px] w-full"
+            className="shadow-xl rounded-full object-cover flex-shrink-0 w-32 md:max-w-[250px] min-w-[155px] md:w-60"
           />
         </motion.div>
         <motion.div
@@ -37,7 +38,7 @@ const About = ({ aboutInfo }: Props) => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: false }}
         >
-          <p className="text-center text-sm  mt-4 w-full">
+          <p className="text-cente text-sm pt-6 w-full">
             {aboutInfo.backgroundInfromation}
           </p>
         </motion.div>
